@@ -9,25 +9,27 @@ const projects = [
 function ProjectList() {
   return (
     <PageWrapper>
-      <h1>Projects</h1>
-      <table style={{ width: '100%', marginTop: 20, background: '#fff', borderCollapse: 'collapse' }}>
-        <thead>
-          <tr style={{ textAlign: 'left', borderBottom: '1px solid #eee' }}>
-            <th style={{ padding: 12 }}>Name</th>
-            <th style={{ padding: 12 }}>Status</th>
-            <th style={{ padding: 12 }}>Priority</th>
-          </tr>
-        </thead>
-        <tbody>
-          {projects.map((p) => (
-            <tr key={p.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
-              <td style={{ padding: 12 }}>{p.name}</td>
-              <td style={{ padding: 12 }}>{p.status}</td>
-              <td style={{ padding: 12 }}>{p.priority}</td>
+      <h1 className="page-title">Projects</h1>
+      <div className="card" style={{ marginTop: 20, padding: 0, overflow: 'hidden' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{ textAlign: 'left', borderBottom: '1px solid rgba(167,139,250,0.2)' }}>
+              <th style={{ padding: 14, color: '#c4b5fd' }}>Name</th>
+              <th style={{ padding: 14, color: '#c4b5fd' }}>Status</th>
+              <th style={{ padding: 14, color: '#c4b5fd' }}>Priority</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {projects.map((p) => (
+              <tr key={p.id} style={{ borderBottom: '1px solid rgba(167,139,250,0.08)' }}>
+                <td style={{ padding: 14, color: '#e5e0f0' }}>{p.name}</td>
+                <td style={{ padding: 14, color: '#d6d0e6' }}>{p.status}</td>
+                <td style={{ padding: 14, color: '#d6d0e6' }}>{p.priority}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </PageWrapper>
   );
 }

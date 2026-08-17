@@ -11,18 +11,18 @@ function Dashboard() {
   ];
   return (
     <PageWrapper>
-      <h1>Dashboard</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 20 }}>
+      <h1 className="page-title">Dashboard</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginTop: 20 }}>
         {cards.map((c) => (
-          <div key={c.label} style={{ background: '#fff', padding: 20, borderRadius: 10, boxShadow: '0 1px 4px rgba(0,0,0,0.1)' }}>
-            <div style={{ color: '#888', fontSize: 14 }}>{c.label}</div>
-            <div style={{ fontSize: 28, fontWeight: 700 }}>{c.value}</div>
+          <div key={c.label} className="card">
+            <div style={{ color: '#a89cc4', fontSize: 13.5 }}>{c.label}</div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: '#fff', marginTop: 6 }}>{c.value}</div>
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 30, background: '#fff', padding: 20, borderRadius: 10 }}>
-        <h3>AI Insights</h3>
-        <p>Your team's velocity increased 12% this sprint. 2 tasks are at risk of missing the deadline.</p>
+      <div className="card" style={{ marginTop: 22 }}>
+        <h3 style={{ color: '#c4b5fd', marginTop: 0 }}>AI Insights</h3>
+        <p style={{ color: '#d6d0e6' }}>Your team's velocity increased 12% this sprint. 2 tasks are at risk of missing the deadline.</p>
       </div>
     </PageWrapper>
   );

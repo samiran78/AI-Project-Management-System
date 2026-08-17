@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/common/ProtectedRoute';
 
 import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';   // ← add this import
 import Dashboard from './pages/Dashboard/Dashboard';
 import ProjectList from './pages/Projects/ProjectList';
 import KanbanBoard from './pages/Kanban/KanbanBoard';
@@ -20,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />   {/* ← add this route */}
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/projects" element={<ProtectedRoute><ProjectList /></ProtectedRoute>} />

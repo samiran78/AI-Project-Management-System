@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
   const links = [
@@ -13,13 +13,37 @@ function Sidebar() {
     { to: '/ai/sprint-planner', label: 'AI Sprint Planner' },
     { to: '/settings', label: 'Settings' },
   ];
+
   return (
-    <div style={{ width: 220, minHeight: '100vh', background: '#1e1e2f', color: '#fff', padding: '20px 10px' }}>
-      <h3 style={{ padding: '0 10px 20px' }}>AI PM System</h3>
+    <div style={{
+      width: 240, minHeight: '100vh',
+      background: 'linear-gradient(180deg, #1a0f2e, #0f0817)',
+      color: '#e5e0f0', padding: '24px 14px',
+      borderRight: '1px solid rgba(167,139,250,0.15)',
+      position: 'sticky', top: 0,
+    }}>
+      <h3 style={{ padding: '0 10px 28px', color: '#c4b5fd', letterSpacing: 0.5, margin: 0 }}>
+        AI PM System
+      </h3>
       {links.map((l) => (
-        <Link key={l.to} to={l.to} style={{ display: 'block', color: '#ccc', padding: '10px', textDecoration: 'none' }}>
+        <NavLink
+          key={l.to}
+          to={l.to}
+          style={({ isActive }) => ({
+            display: 'block',
+            color: isActive ? '#fff' : '#c9c2dd',
+            background: isActive ? 'linear-gradient(135deg, #7c3aed, #9333ea)' : 'transparent',
+            padding: '11px 14px',
+            textDecoration: 'none',
+            borderRadius: 8,
+            marginBottom: 4,
+            fontWeight: isActive ? 600 : 400,
+            fontSize: 14.5,
+            transition: 'background 0.15s',
+          })}
+        >
           {l.label}
-        </Link>
+        </NavLink>
       ))}
     </div>
   );
